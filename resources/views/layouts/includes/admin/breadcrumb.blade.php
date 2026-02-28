@@ -1,30 +1,27 @@
-{{-- Verificar primero si hay un elemento en el arreglo  breadcrums --}}
+{{-- Verificar primero si hay un elemento en el arreglo breadcrumbs --}}
 @if (count($breadcrumbs))
-    {{-- Display:block --}}
-    <nav class ="mb-2 block">
+    <nav class="mb-2 block">
       <ol class="flex flex-wrap text-slate-700 text-sm">
         @foreach ($breadcrumbs as $item)
         <li class="flex items-center">
-          {{-- Si No es el primer elemento, pinta el separador con espacio --}}
+            {{-- Separador --}}
             @unless ($loop->first)
-            {{-- El span crea en separador con margen lateral --}}
-            <span class="px-2 text-gray-400">
-              /
-            </span>
+            <span class="px-2 text-gray-400"> / </span>
             @endunless
-            {{-- Revisa si existe una llave/propiedad llamada 'href'--}}
-              @isset($link['href'])
-              {{-- Si existe se meustra como enlace --}}
-                <a href="{{$item['href']}}" class"opacity-60 hover:opacity-100 trnasition>
+
+            {{-- CORRECCIÓN AQUÍ: Usar $item en lugar de $link --}}
+            @isset($item['href'])
+                {{-- Agregué el signo = que faltaba en class y corregí 'trnasition' --}}
+                <a href="{{ $item['href'] }}" class="opacity-60 hover:opacity-100 transition-opacity duration-200">
                   {{ $item['name'] }}
                 </a>
-              @else
+            @else
                 {{ $item['name'] }}
-              @endisset
+            @endisset
         </li>
         @endforeach
       </ol>
-      {{-- El utlimo elemento aparezca resaltado --}}
+
       @if(count($breadcrumbs) > 1)
       <h6 class="font-bold mt-2">
         {{ end($breadcrumbs)['name'] }}

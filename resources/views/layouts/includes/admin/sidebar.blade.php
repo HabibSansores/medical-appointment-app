@@ -10,27 +10,10 @@
             'header' => 'Administración',
         ],
         [
-            'name' => 'Tienda en linea',
-            'icon' => 'fa-solid fa-user-group',
-            'href' => '#', // Cambiado a '#' para que no redireccione si tiene submenú
-            'active' => request()->routeIs('admin.tienda.*'), // Ajusta según tus rutas
-            'submenu' => [
-                [
-                    'name' => 'Productos',
-                    'href' => '#',
-                    'active' => false,
-                ],
-                [
-                    'name' => 'Categoria',
-                    'href' => '#',
-                    'active' => false,
-                ],
-                [
-                    'name' => 'Pedidos',
-                    'href' => '#',
-                    'active' => false,
-                ],
-            ],
+            'name' => 'Roles y permisos',
+            'icon' => 'fa-solid fa-shield-halved',
+            'href' => route('admin.roles.index'),
+            'active' => request()->routeIs('admin.roles.*'),
         ],
     ];
 @endphp
