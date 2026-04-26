@@ -54,7 +54,7 @@ class UserController extends Controller
         ]);
 
         //Si el usuario creado es un paciente, envía el módulo pacientes
-            if ($user::role('Paciente')){
+            if ($user::hasrole('Paciente')){
             //Creamos el registro para un paciente
             $patient = $user->patient()->create([]);
             return redirect()->route('admin.patients.edit', $patient);

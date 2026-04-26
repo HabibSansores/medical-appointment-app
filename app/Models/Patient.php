@@ -16,6 +16,7 @@ class Patient extends Model
         'observations',
         'emergency_contact_name',
         'emergency_contact_relationship',
+        'emergency_contact_phone',
         ];
     //Relacion UNO A UNO INVERSA
     public function user()
