@@ -108,22 +108,6 @@
         </x-wire-card>
 
 
-        {{-- =========================== --}}
-        {{-- SISTEMA DE TABS REFACTORIZADO --}}
-        {{-- =========================== --}}
-        {{-- YA NO USAMOS:
-             div x-data
-             ul manual
-             li manual
-             div x-show manual
-
-             AHORA TODO ESO LO MANJAN:
-             x-tabs
-             x-tabs-link
-             x-tab-content
-        --}}
-        {{-- =========================== --}}
-
         <x-wire-card>
 
             <x-tabs :active="$initialTab">

@@ -8,7 +8,7 @@
             'text-red-600 border-red-600 active': tab === '{{ $tab }}' && {{ $error ? 'true' : 'false' }},
             'border-transparent hover:text-blue-600 hover:border-gray-300': tab !== '{{ $tab }}' && !{{ $error ? 'true' : 'false' }}
        }"
-       class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg group transition-all"y
+       class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg group transition-all"
        :aria-current="tab === '{{ $tab }}' ? 'page' : undefined">
 
         {{ $slot }}
