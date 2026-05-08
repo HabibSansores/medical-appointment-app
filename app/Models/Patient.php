@@ -9,6 +9,7 @@ class Patient extends Model
 {
 
     protected $fillable = [
+        'blood_type_id',
         'allergies',
         'chronic_conditions',
         'surgical_history',
@@ -27,5 +28,11 @@ class Patient extends Model
     public function blood_type()
     {
         return $this->belongsTo(BloodType::class);
+    }
+
+    //Relacion UNO A MUCHOS
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
     }
 }

@@ -27,6 +27,30 @@
             'href' => route('admin.patients.index'),
             'active' => request()->routeIs('admin.patients.*'),
         ],
+        [
+            'name' => 'Doctores',
+            'icon' => 'fa-solid fa-user-doctor',
+            'href' => route('admin.doctors.index'),
+            'active' => request()->routeIs('admin.doctors.*'),
+        ],
+        [
+            'name' => 'Citas médicas',
+            'icon' => 'fa-regular fa-calendar-check',
+            'href' => route('admin.appointments.index'),
+            'active' => request()->routeIs('admin.appointments.*') || request()->routeIs('admin.consultations.*'),
+        ],
+        [
+            'name' => 'Calendario',
+            'icon' => 'fa-regular fa-calendar-days',
+            'href' => '#',
+            'active' => false,
+        ],
+        [
+            'name' => 'Soporte',
+            'icon' => 'fa-solid fa-headset',
+            'href' => '#',
+            'active' => false,
+        ],
     ];
 @endphp
 
