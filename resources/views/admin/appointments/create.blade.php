@@ -54,7 +54,7 @@
                             <div class="flex items-center space-x-2">
                                 <select id="startTime" name="start_time" class="block w-full border-gray-300 rounded-md text-sm focus:ring-blue-500 focus:border-blue-500">
                                     <option value="">Inicio</option>
-                                    @for($h = 8; $h <= 20; $h++)
+                                    @for($h = 0; $h <= 23; $h++)
                                         @foreach(['00', '15', '30', '45'] as $m)
                                             @php $time = sprintf('%02d:%s', $h, $m); @endphp
                                             <option value="{{ $time }}" {{ old('start_time') == $time ? 'selected' : '' }}>{{ $time }}</option>
@@ -64,7 +64,7 @@
                                 <span class="text-gray-400">-</span>
                                 <select id="endTime" name="end_time" class="block w-full border-gray-300 rounded-md text-sm focus:ring-blue-500 focus:border-blue-500">
                                     <option value="">Fin</option>
-                                    @for($h = 8; $h <= 20; $h++)
+                                    @for($h = 0; $h <= 23; $h++)
                                         @foreach(['00', '15', '30', '45'] as $m)
                                             @php $time = sprintf('%02d:%s', $h, $m); @endphp
                                             <option value="{{ $time }}" {{ old('end_time') == $time ? 'selected' : '' }}>{{ $time }}</option>

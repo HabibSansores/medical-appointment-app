@@ -15,6 +15,7 @@ class Appointment extends Model
         'duration',
         'reason',
         'status',
+        'reminder_sent',
         'diagnosis',
         'treatment',
         'notes',
@@ -23,6 +24,7 @@ class Appointment extends Model
 
     protected $casts = [
         'prescription' => 'array',
+        'reminder_sent' => 'boolean',
     ];
 
     public function patient()
